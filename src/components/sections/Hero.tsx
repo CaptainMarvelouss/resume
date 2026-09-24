@@ -4,6 +4,7 @@ import { Mail, Download, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Card } from '@/components/ui/Card';
+import { Avatar } from '@/components/ui/Avatar';
 import { TechIcon } from '@/components/ui/TechIcon';
 import { profileData } from '@/data/profile';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
@@ -45,10 +46,24 @@ export const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           {/* Left Column: Hero Content */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-5">
-            {/* Status Pill */}
-            <Badge variant="status" size="md" pulse={true}>
-              {profileData.identity.status[language]}
-            </Badge>
+            {/* Avatar + Status Row */}
+            <div className="flex items-center gap-4">
+              <Avatar
+                src={profileData.identity.avatarPath}
+                alt={`${profileData.identity.name} – ${profileData.identity.roleTitle[language]}`}
+                initials={profileData.identity.name.split(' ').map(n => n[0]).slice(-2).join('')}
+                size="lg"
+                withStatusDot={true}
+              />
+              <div className="flex flex-col gap-1.5">
+                <span className="text-lg sm:text-xl font-semibold tracking-tight text-white">
+                  {profileData.identity.name}
+                </span>
+                <Badge variant="status" size="md" pulse={true}>
+                  {profileData.identity.status[language]}
+                </Badge>
+              </div>
+            </div>
 
             {/* Display Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.03em] leading-[1.1] text-[#EDEDEF]">

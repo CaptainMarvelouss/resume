@@ -61,6 +61,8 @@ export interface ProfileContent {
     // TODO: Add your public LinkedIn URL
     linkedinUrl: string;
     resumePath: string;
+    // Path to personal photo in /public — replace avatar.jpg with your own photo
+    avatarPath: string;
     status: {
       en: string;
       vi: string;
@@ -137,12 +139,13 @@ export const profileData: ProfileContent = {
     githubUrl: '', // TODO: Add GitHub URL
     linkedinUrl: '', // TODO: Add LinkedIn URL
     resumePath: './Phan_Duong_Huy_Resume.pdf',
+    avatarPath: './avatar.jpg', // Replace with your own photo in /public
     status: {
       en: 'Open to work',
       vi: 'Sẵn sàng làm việc',
     },
     roleTitle: {
-      en: 'Junior .NET Backend Developer',
+      en: 'Intern .NET Backend Developer',
       vi: 'Lập trình viên .NET Backend',
     },
   },
