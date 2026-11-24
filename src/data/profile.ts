@@ -133,7 +133,7 @@ export const profileData: ProfileContent = {
   identity: {
     name: 'Phan Duong Huy',
     location: 'Da Nang',
-    email: 'phanduonghuy@gmail.com',
+    email: 'phanduonghuy2003@gmail.com',
     phone: '0918 930 552',
     showPhone: false,
     githubUrl: '', // TODO: Add GitHub URL
